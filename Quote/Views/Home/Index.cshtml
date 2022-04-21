@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Quote";
+}
+@model List<ApplicationResponse>
+
+<div> <a asp-controller="Home" asp-action="EnterQuote">Enter Quote</a>
+</div>
+
+<h1>Great Quotes Here!</h1>
+
+<div>
+    <p>Here are the quotes that have been entered</p>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Quote</td>
+            <td>Author</td>
+            <td>Date</td>
+            <td>Subject</td>
+            <td>Citation</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+            {
+        <tr>
+            <td>@x.Quote</td>
+            <td>@x.Author</td>
+            <td>@x.Date</td>
+            <td>@x.Subject</td>
+            <td>@x.Citation</td>
+            <td><a asp-controller="Home" asp-action="Details" asp-route-applicationid="@x.ApplicationId">Details</a></td>
+            
+        </tr>
+            }
+    </tbody>
+</table>

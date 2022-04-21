@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Enter Quote";
+}
+
+@model Quote.Models.ApplicationResponse
+<div>
+    <a asp-controller="Home" asp-action="Index">Quote List</a>
+</div>
+<h1>Fill Out Your Quote</h1>
+<div>
+    <form method="post">
+        <label asp-for="Quote">Quote:</label>
+        <input asp-for="Quote" /><br />
+        <label asp-for="Author">Author:</label>
+        <input asp-for="Author" /><br />
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" /><br />
+        <label asp-for="Subject">Subject:</label>
+        <input asp-for="Subject" /><br />
+        <label asp-for="Citation">Citation:</label>
+        <input asp-for="Citation" /><br />
+        <button type="submit">Submit Quote</button><br />
+    </form>
+</div>
